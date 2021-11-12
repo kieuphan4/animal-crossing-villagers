@@ -1,12 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Fetch Animal Crossing villagers API
     // Part 1 - Fetching villagers
-    fetch("https://acnhapi.com/v1/villagers")
-    .then(resp => resp.json())
-    .then(data => console.log(data))
-
-
+    function fetchVillagers() {
+        fetch("https://acnhapi.com/v1/villagers")
+        .then(resp => resp.json())
+        .then(data => {
+            console.log(data)
+            // data.image_uri to display villager image
+            // data.name to display name under image
+    })
     
+
+
+
     // Add villagers to page
     
     // Create card or icons to display villagers
