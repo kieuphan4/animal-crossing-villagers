@@ -14,11 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Add villagers to page
     function displayVillager(villager) {
-        const img = document.createElement("img")
-        img.src = villager.icon_uri
-        villagerBox.append(img)
+        villagerBox.innerHTML= ""
+        
+        
     }
+    // function displayVillager(villager) {
+    //     const img = document.createElement("img")
+    //     img.src = villager.icon_uri
+    //     villagerBox.append(img)
+    // }
     
+    displayVillager();
     fetchVillagers();
     // Create card or icons to display villagers
     
