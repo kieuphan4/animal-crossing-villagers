@@ -1,20 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Fetch Animal Crossing villagers API
+    const villagerBox = document.getElementById("villager-container");
+
     // Part 1 - Fetching villagers
     function fetchVillagers() {
         fetch("https://acnhapi.com/v1/villagers")
         .then(resp => resp.json())
-        .then(data => {
-            console.log(data)
+        .then(villager => {
+            displayVillager(villager)
+        })
             // data.image_uri to display villager image
             // data.name to display name under image
-    })
+    }
     
-
-
-
     // Add villagers to page
+    function displayVillager(villager) {
+        const img = document.createElement("img")
+        img.src = villager.icon_uri
+        villagerBox.append(img)
+    }
     
+    fetchVillagers();
     // Create card or icons to display villagers
     
     // Event 1 - Click on villagers to show their info
