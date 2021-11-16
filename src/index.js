@@ -1,30 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const villagerBox = document.getElementById("villager-container");
+const villagerCollection = document.getElementById("villager-container")
 
-    // Part 1 - Fetching villagers
+document.addEventListener("DOMContentLoaded", () => {
+    // Part 1 - Fetch villagers from API
+
     function fetchVillagers() {
-        fetch("https://acnhapi.com/v1/villagers")
-        .then(resp => resp.json())
-        .then(villager => {
-            displayVillager(villager)
+        fetch(`http://acnhapi.com/v1a/villagers/`, {
         })
-            // data.image_uri to display villager image
-            // data.name to display name under image
+            .then(resp => resp.json())
+            .then(data => data.map(villager => renderVillager(villager)))  
+    }
+
+    function renderVillager(villager) {
+        const villagerCard = `<div id="card">
+        <img src="${villager.image_uri}" class="villager-avatar"/>
+        <h4>${villager.name["name-USen"]}</h4>
+        </div>`
+
+        villagerCollection.innerHTML += villagerCard;
     }
     
-    // Add villagers to page
-    function displayVillager(villager) {
-        villagerBox.innerHTML= ""
-        
-        
-    }
-    // function displayVillager(villager) {
-    //     const img = document.createElement("img")
-    //     img.src = villager.icon_uri
-    //     villagerBox.append(img)
-    // }
     
-    displayVillager();
     fetchVillagers();
     // Create card or icons to display villagers
     
@@ -37,4 +32,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // Stretch Goal - Delete villager from list
 
 })
+
 
