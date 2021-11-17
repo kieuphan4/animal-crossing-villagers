@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 villagerDiv.style.display = "none";
             }
+            e.target.style.background = "#66bb6a"
         })
     }
 
