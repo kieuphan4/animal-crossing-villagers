@@ -13,27 +13,37 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderVillager(villager) {
         const villagerCard = document.createElement("div")
         villagerCard.className = "card"
-        // const img = villager.image_uri
-
         villagerCard.innerHTML = `
-        <img src="${villager.image_uri}" class="villager-avatar"/>
-        <h4>${villager.name["name-USen"]}</h4>
-        `
+            <img src="${villager.image_uri}" class="villager-avatar"/>
+            <h4>${villager.name["name-USen"]}</h4>`
         villagerCollection.append(villagerCard)
 
-    
+        const detailsBtn = document.createElement("button")
+        detailsBtn.innerHTML = "About Me!"
+        villagerCard.append(detailsBtn)
+
+        const detailsDiv = document.createElement("div")
+        detailsDiv.className = "details"
+        detailsDiv.innerHTML = `
+            <p><b>Birthday: </b>${villager["birthday-string"]}</p>
+            <p><b>Gender: </b>${villager.gender}</p>
+            <p><b>Species: </b>${villager.species}</p>
+            <p><b>Personality: </b>${villager.personality}</p>
+            <p><b>Hobby: </b>${villager.hobby}</p>
+            <p><b>Catchphrase: </b>${villager["catch-phrase"]}</p>
+            <p><b>Saying: </b>${villager.saying}</p> `
+        villagerCard.append(detailsDiv)
         
-        // `<div class="card">
-        //     <p>Birthday: ${villager["birthday-string"]}</p>
-        //     <p>Gender: ${villager.gender}</p>
-        //     <p>Species: ${villager.species}</p>
-        //     <p>Personality: ${villager.personality}</p>
-        //     <p>Hobby: ${villager.hobby}</p>
-        //     <p>Catchphrase: ${villager["catch-phrase"]}</p>
-        //     <p>Saying: ${villager.saying}</p>
-        // </div>`
-    
-        // villagerCollection.innerHTML += villagerCard;
+        // detailsBtn.addEventListener("click", () => {
+        //     document.querySelectorAll(".details").forEach(function(btn) {
+        //         if (btn.style.display === "none") {
+        //             btn.style.display = "block";
+        //         } else {
+        //             btn.style.display = "none";
+        //         }
+                
+        //     })
+        // })
     }
     
     
