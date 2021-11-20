@@ -14,7 +14,8 @@ h4.fav {
 }
 
 div#favorite-list {
-    float: left;
+    display: flex;
+    justify-content: left;
 }
 
 img.img-icon {
