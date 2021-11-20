@@ -17,14 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
         villagerCard.innerHTML = `
             <img src="${villager.image_uri}" class="villager-avatar"/>
             <p>"${villager.saying}"</p>
-            <h4><b>${villager.name["name-USen"]}</b></h4>`
+            <h4 class="name"><b>${villager.name["name-USen"]}</b></h4>`
         villagerCollection.append(villagerCard)
 
-        const detailsBtn = document.createElement("button")
-        detailsBtn.id = `btn${villager.id}`
-        detailsBtn.className = "button"
-        detailsBtn.innerHTML = "About Me!"
-        villagerCard.append(detailsBtn)
+        const btn = document.createElement("button")
+        btn.id = `btn${villager.id}`
+        btn.className = "button"
+        btn.innerHTML = "About Me!"
+        villagerCard.append(btn)
 
         const detailsDiv = document.createElement("div")
         detailsDiv.id = villager.id
@@ -36,10 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <p><b>Personality: </b>${villager.personality}</p>
             <p><b>Hobby: </b>${villager.hobby}</p>
             <p><b>Catchphrase: </b>${villager["catch-phrase"]}</p>`
-            villagerCard.append(detailsDiv)
-            
+        villagerCard.append(detailsDiv)
+
         // Event 1 - Click on villagers to show their info
-        detailsBtn.addEventListener("click", (e) => {
+        btn.addEventListener("click", (e) => {
             const villagerId = e.target.id.substring(3)
             let villagerDiv = document.getElementById(villagerId)
             if (villagerDiv.style.display === "block") {
@@ -49,15 +49,94 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             e.target.style.background = "#66bb6a"
         })
+
+        const heartBtn = document.createElement("button")
+        heartBtn.className = "heart-button"
+        heartBtn.innerHTML = "Add to Favorites"
+        villagerCard.append(heartBtn)
+
+        // Event 3 - Add villagers to a favorite list when their card is clicked
+        heartBtn.addEventListener("click", (e) => {
+            addToFavorites(villager)
+            e.target.style.background = "#66bb6a"
+        })
     }
 
+    function addToFavorites(villagers) {
+        const villagerIcon = document.createElement("img")
+        villagerIcon.className = "img-icon"
+        villagerIcon.src = villagers.icon_uri
 
-    fetchVillagers();
+        const removeBtn = document.createElement("button")
+        removeBtn.className = "remove-button"
+        removeBtn.addEventListener("click", (e) => {
+            removeVillager(e.target)
+        })
+        removeBtn.innerText = "Release"
 
+        const v1 = document.getElementById("villager1")
+        const v2 = document.getElementById("villager2")
+        const v3 = document.getElementById("villager3")
+        const v4 = document.getElementById("villager4")
+        const v5 = document.getElementById("villager5")
+        const v6 = document.getElementById("villager6")
+        const v7 = document.getElementById("villager7")
+        const v8 = document.getElementById("villager8")
+        const v9 = document.getElementById("villager9")
+        const v10 = document.getElementById("villager10")
+
+        switch ("") {
+            case v1.innerHTML:
+                v1.append(villagerIcon)
+                v1.append(removeBtn)
+                break
+            case v2.innerHTML:
+                v2.append(villagerIcon)
+                v2.append(removeBtn)
+                break
+            case v3.innerHTML:
+                v3.append(villagerIcon)
+                v3.append(removeBtn)
+                break
+            case v4.innerHTML:
+                v4.append(villagerIcon)
+                v4.append(removeBtn)
+                break
+            case v5.innerHTML:
+                v5.append(villagerIcon)
+                v5.append(removeBtn)
+                break
+            case v6.innerHTML:
+                v6.append(villagerIcon)
+                v6.append(removeBtn)
+                break
+            case v7.innerHTML:
+                v7.append(villagerIcon)
+                v7.append(removeBtn)
+                break
+            case v8.innerHTML:
+                v8.append(villagerIcon)
+                v8.append(removeBtn)
+                break
+            case v9.innerHTML:
+                v9.append(villagerIcon)
+                v9.append(removeBtn)
+                break
+            case v10.innerHTML:
+                v10.append(villagerIcon)
+                v10.append(removeBtn)
+                break
+            default:
+
+        }
+    }
+
+    function removeVillager(removeBtn) {
+        removeBtn.parentNode.innerHTML = ""
+    }
 
     // Event 2 - Create a search for villager
-
-    // Event 3 - Add villagers to a favorite list when their card is clicked
+    fetchVillagers();
 
     // Stretch Goal - Delete villager from list
 

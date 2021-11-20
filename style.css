@@ -1,12 +1,39 @@
 body {
     background-color: beige;
-    width: 100%;
-    
+    display: grid;
+    grid-template-rows: auto auto auto;
 }
 
 div.container {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
+}
+
+h4.fav {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 40px;
+}
+
+div#favorite-list {
+    float: left;
+}
+
+img.img-icon {
+    background-color: white;
+    border-radius: 100px;
+}
+button.remove-button {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #66bb6a;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 div#villager-container {
@@ -33,17 +60,36 @@ div.card img {
     height: 200px;
 }
 
+button {
+    float: left;
+}
+
 button.button {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: #66bb6a;
     border: none;
     border-radius: 4px;
     color: white;
-    padding: 14px 28px;
+    padding: 12px 24px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+button.heart-button {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #66bb6a;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
     margin: 4px 2px;
     cursor: pointer;
 }
