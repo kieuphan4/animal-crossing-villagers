@@ -141,11 +141,17 @@ document.addEventListener("DOMContentLoaded", () => {
         removeBtn.parentNode.innerHTML = ""
     }
 
-    // Event 2 - Create a search for villager
-    
-
+    function searchVillagers() {
+        fetch(`http://acnhapi.com/v1a/villagers/`)
+            .then(resp => resp.json())
+            .then(data => {
+                const results = data.map(villager => villager.name["name-USen"])
+                console.log(results)
+            })
+    }
 
     fetchVillagers();
+    searchVillagers();
 
     // Stretch Goal - Delete villager from list
 
