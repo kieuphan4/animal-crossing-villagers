@@ -16,7 +16,6 @@ h4.current {
 div#current-list {
     display: flex;
     justify-content: left;
-    position: relative;
 }
 
 img.img-icon {
@@ -36,9 +35,6 @@ button.remove-button {
     font-size: 10px;
     margin: 4px 2px;
     cursor: pointer;
-    position: relative;
-    bottom: -110px;
-    left: 105px;
 }
 
 div#villager-container {

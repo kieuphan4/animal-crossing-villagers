@@ -3,7 +3,6 @@ const villagerCollection = document.getElementById("villager-container")
 
 document.addEventListener("DOMContentLoaded", () => {
     // Part 1 - Fetch villagers from API
-
     function fetchVillagers() {
         fetch(`http://acnhapi.com/v1a/villagers/`)
             .then(resp => resp.json())
@@ -55,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentBtn.innerHTML = "Add to Current"
         villagerCard.append(currentBtn)
 
-        // Event 3 - Add villagers to a favorite list when their card is clicked
+        // Event 3 - Add villagers to a current list when their card is clicked
         currentBtn.addEventListener("click", (e) => {
             if (currentBtn.style.display === "none") {
                 currentBtn.style.display = "block"
@@ -67,11 +66,13 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    // Part 3 - Create current villager list
     function addToCurrent(villagers) {
         const villagerIcon = document.createElement("img")
         villagerIcon.className = "img-icon"
         villagerIcon.src = villagers.icon_uri
 
+        // Part 4 - Remove villagers from list
         const removeBtn = document.createElement("button")
         removeBtn.className = "remove-button"
         removeBtn.addEventListener("click", (e) => {
@@ -141,6 +142,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Event 2 - Create a search for villager
+    
+
+
     fetchVillagers();
 
     // Stretch Goal - Delete villager from list
