@@ -8,12 +8,12 @@ div.container {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-h4.fav {
+h4.current {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-left: 40px;
 }
 
-div#favorite-list {
+div#current-list {
     display: flex;
     justify-content: left;
 }

@@ -50,19 +50,24 @@ document.addEventListener("DOMContentLoaded", () => {
             e.target.style.background = "#66bb6a"
         })
 
-        const heartBtn = document.createElement("button")
-        heartBtn.className = "heart-button"
-        heartBtn.innerHTML = "Add to Favorites"
-        villagerCard.append(heartBtn)
+        const currentBtn = document.createElement("button")
+        currentBtn.className = "heart-button"
+        currentBtn.innerHTML = "Add to Current"
+        villagerCard.append(currentBtn)
 
         // Event 3 - Add villagers to a favorite list when their card is clicked
-        heartBtn.addEventListener("click", (e) => {
-            addToFavorites(villager)
+        currentBtn.addEventListener("click", (e) => {
+            if (currentBtn.style.display === "none") {
+                currentBtn.style.display = "block"
+            } else {
+                currentBtn.style.display = "none"
+            }
+            addToCurrent(villager)
             e.target.style.background = "#66bb6a"
         })
     }
 
-    function addToFavorites(villagers) {
+    function addToCurrent(villagers) {
         const villagerIcon = document.createElement("img")
         villagerIcon.className = "img-icon"
         villagerIcon.src = villagers.icon_uri
