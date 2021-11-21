@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
         const currentBtn = document.createElement("button")
-        currentBtn.className = "heart-button"
+        currentBtn.className = "current-button"
         currentBtn.innerHTML = "Add to Current"
         villagerCard.append(currentBtn)
 

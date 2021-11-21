@@ -16,6 +16,7 @@ h4.current {
 div#current-list {
     display: flex;
     justify-content: left;
+    position: relative;
 }
 
 img.img-icon {
@@ -35,12 +36,16 @@ button.remove-button {
     font-size: 10px;
     margin: 4px 2px;
     cursor: pointer;
+    position: relative;
+    bottom: -110px;
+    left: 105px;
 }
 
 div#villager-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
+    margin-top: 25px;
     margin-left: 40px;
 }
 
@@ -80,7 +85,7 @@ button.button {
     cursor: pointer;
 }
 
-button.heart-button {
+button.current-button {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: #66bb6a;
     border: none;
