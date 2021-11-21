@@ -150,6 +150,13 @@ document.addEventListener("DOMContentLoaded", () => {
             })
     }
 
+    // Event 2 - Create a search for villager
+    const searchBar = document.getElementById("villager-name")
+    searchBar.addEventListener("keyup", (e) => {
+        searchVillagers(searchBar. value)
+    })
+
+
     fetchVillagers();
     searchVillagers();
 
