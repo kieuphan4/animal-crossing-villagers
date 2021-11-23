@@ -1,10 +1,10 @@
-const mainContainer = document.getElementsByClassName("container");
-const villagerCollection = document.getElementById("villager-container")
-
 document.addEventListener("DOMContentLoaded", () => {
+    const villagerUrl = "http://acnhapi.com/v1a/villagers/"
+    const villagerCollection = document.getElementById("villager-container")
+
     // Part 1 - Fetch villagers from API
     function fetchVillagers() {
-        fetch(`http://acnhapi.com/v1a/villagers/`)
+        fetch(villagerUrl)
             .then(resp => resp.json())
             .then(data => data.map(villager => renderVillager(villager)))
     }
@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Part 2 - Create card or icons to display villagers
     function renderVillager(villager) {
         const villagerCard = document.createElement("div")
+        villagerCard.id = villager.name["name-USen"]
         villagerCard.className = "card"
         villagerCard.innerHTML = `
             <img src="${villager.image_uri}" class="villager-avatar"/>
@@ -141,27 +142,27 @@ document.addEventListener("DOMContentLoaded", () => {
         removeBtn.parentNode.innerHTML = ""
     }
 
-    function searchVillagers() {
-        fetch(`http://acnhapi.com/v1a/villagers/`)
-            .then(resp => resp.json())
-            .then(data => {
-                const results = data.map(villager => villager.name["name-USen"])
-                console.log(results)
-            })
-    }
-
     // Event 2 - Create a search for villager
     const searchBar = document.getElementById("villager-name")
     searchBar.addEventListener("keyup", (e) => {
-        searchVillagers(searchBar. value)
+        const cards = document.getElementsByClassName("card")
+        const input = document.getElementById(e.target.value)
+        if (input.toLowerCase()) {
+            for (const card of cards) {
+                card.style.display = "none"
+            }
+            input.style.display = "block"
+        } else {
+            for (const card of cards) {
+                card.style.display = "block"
+            }
+
+        }
+
+        
     })
 
-
     fetchVillagers();
-    searchVillagers();
-
-    // Stretch Goal - Delete villager from list
-
 })
 
 
