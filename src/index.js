@@ -4,6 +4,7 @@ const villagerCollection = document.getElementById("villager-container")
 document.addEventListener("DOMContentLoaded", () => {
 
     fetchVillagers();
+    buildSearchBar();
     
     
 })
@@ -29,21 +30,6 @@ function renderVillager(villager) {
     buildBtn(villager, villagerCard)
     createDetails(villager, villagerCard)
     buildCurrentBtn (villager, villagerCard)
-
-}
-
-function createDetails(villager, villagerCard) {
-    const detailsDiv = document.createElement("div")
-    detailsDiv.id = villager.id
-    detailsDiv.className = "details"
-    detailsDiv.innerHTML = `
-    <p><b>Birthday: </b>${villager["birthday-string"]}</p>
-    <p><b>Gender: </b>${villager.gender}</p>
-    <p><b>Species: </b>${villager.species}</p>
-    <p><b>Personality: </b>${villager.personality}</p>
-    <p><b>Hobby: </b>${villager.hobby}</p>
-    <p><b>Catchphrase: </b>${villager["catch-phrase"]}</p>`
-    villagerCard.append(detailsDiv)
 }
 
 function buildBtn (villager, villagerCard) {
@@ -64,6 +50,20 @@ function buildBtn (villager, villagerCard) {
         }
         e.target.style.background = "#66bb6a"
     })
+}
+
+function createDetails(villager, villagerCard) {
+    const detailsDiv = document.createElement("div")
+    detailsDiv.id = villager.id
+    detailsDiv.className = "details"
+    detailsDiv.innerHTML = `
+    <p><b>Birthday: </b>${villager["birthday-string"]}</p>
+    <p><b>Gender: </b>${villager.gender}</p>
+    <p><b>Species: </b>${villager.species}</p>
+    <p><b>Personality: </b>${villager.personality}</p>
+    <p><b>Hobby: </b>${villager.hobby}</p>
+    <p><b>Catchphrase: </b>${villager["catch-phrase"]}</p>`
+    villagerCard.append(detailsDiv)
 }
 
 function buildCurrentBtn (villager, villagerCard) {
@@ -160,21 +160,23 @@ function removeVillager(removeBtn) {
 }
 
 // Event 2 - Create a search for villager
-const searchBar = document.getElementById("villager-name")
-searchBar.addEventListener("keyup", (e) => {
-    const cards = document.getElementsByClassName("card")
-    const input = document.getElementById(e.target.value)
-    if (input) {
-        for (const card of cards) {
-            card.style.display = "none"
+function buildSearchBar() {
+    const searchBar = document.getElementById("villager-name")
+    searchBar.addEventListener("keyup", (e) => {
+        const cards = document.getElementsByClassName("card")
+        const input = document.getElementById(e.target.value)
+        if (input) {
+            for (const card of cards) {
+                card.style.display = "none"
+            }
+            input.style.display = "block"
+        } else {
+            for (const card of cards) {
+                card.style.display = "block"
+            }
         }
-        input.style.display = "block"
-    } else {
-        for (const card of cards) {
-            card.style.display = "block"
-        }
-    }
-})
+    })
+}
 
 
 
