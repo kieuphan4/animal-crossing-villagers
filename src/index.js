@@ -28,7 +28,7 @@ function renderVillager(villager) {
 
     buildBtn(villager, villagerCard)
     createDetails(villager, villagerCard)
-    buildCurrentBtn (villagerCard)
+    buildCurrentBtn (villager, villagerCard)
 
 }
 
@@ -66,12 +66,22 @@ function buildBtn (villager, villagerCard) {
     })
 }
 
-function buildCurrentBtn (villagerCard) {
+function buildCurrentBtn (villager, villagerCard) {
     const currentBtn = document.createElement("button")
     currentBtn.className = "current-button"
     currentBtn.innerHTML = "Add to Current"
     villagerCard.append(currentBtn)
 
+    // Event 3 - Add villagers to a current list when their card is clicked
+    currentBtn.addEventListener("click", (e) => {
+        if (currentBtn.style.display === "none") {
+            currentBtn.style.display = "block"
+        } else {
+            currentBtn.style.display = "none"
+        }
+        addToCurrent(villager)
+        e.target.style.background = "#66bb6a"
+    })
 }
 
 // Part 3 - Create current villager list
