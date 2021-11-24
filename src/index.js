@@ -27,18 +27,9 @@ function renderVillager(villager) {
     villagerCollection.append(villagerCard)
 
     buildBtn(villager, villagerCard)
+    createDetails(villager, villagerCard)
 
-    const detailsDiv = document.createElement("div")
-    detailsDiv.id = villager.id
-    detailsDiv.className = "details"
-    detailsDiv.innerHTML = `
-        <p><b>Birthday: </b>${villager["birthday-string"]}</p>
-        <p><b>Gender: </b>${villager.gender}</p>
-        <p><b>Species: </b>${villager.species}</p>
-        <p><b>Personality: </b>${villager.personality}</p>
-        <p><b>Hobby: </b>${villager.hobby}</p>
-        <p><b>Catchphrase: </b>${villager["catch-phrase"]}</p>`
-    villagerCard.append(detailsDiv)
+    
 
     
 
@@ -77,6 +68,20 @@ function buildBtn (villager, villagerCard) {
         }
         e.target.style.background = "#66bb6a"
     })
+}
+
+function createDetails(villager, villagerCard) {
+    const detailsDiv = document.createElement("div")
+    detailsDiv.id = villager.id
+    detailsDiv.className = "details"
+    detailsDiv.innerHTML = `
+        <p><b>Birthday: </b>${villager["birthday-string"]}</p>
+        <p><b>Gender: </b>${villager.gender}</p>
+        <p><b>Species: </b>${villager.species}</p>
+        <p><b>Personality: </b>${villager.personality}</p>
+        <p><b>Hobby: </b>${villager.hobby}</p>
+        <p><b>Catchphrase: </b>${villager["catch-phrase"]}</p>`
+    villagerCard.append(detailsDiv)
 }
 
 // Part 3 - Create current villager list
