@@ -65,6 +65,18 @@ function buildBtn (villager, villagerCard) {
         btn.className = "button"
         btn.innerHTML = "About Me!"
         villagerCard.append(btn)
+    
+    // Event 1 - Click on villagers to show their info
+    btn.addEventListener("click", (e) => {
+        const villagerId = e.target.id.substring(3)
+        let villagerDiv = document.getElementById(villagerId)
+        if (villagerDiv.style.display === "block") {
+            villagerDiv.style.display = "none";
+        } else {
+            villagerDiv.style.display = "block";
+        }
+        e.target.style.background = "#66bb6a"
+    })
 }
 
 // Part 3 - Create current villager list
