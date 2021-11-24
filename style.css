@@ -100,8 +100,32 @@ div.details {
     display: none;
     font-size: 12px;
 }
+
 div#favorite-list {
     float: left;
+}
+
+form {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: white;
+    border: none;
+    border-radius: 100px;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+form span {
+    color: black;
+    font-size: 20px;
+}
+
+form input#villager-name {
+    color: black;
+    border-bottom: 1px solid #66bb6a;
+
 }
 
 

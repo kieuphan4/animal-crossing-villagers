@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Part 2 - Create card or icons to display villagers
     function renderVillager(villager) {
         const villagerCard = document.createElement("div")
-        villagerCard.id = villager.name["name-USen"]
+        villagerCard.id = villager.name["name-USen"].toLowerCase()
         villagerCard.className = "card"
         villagerCard.innerHTML = `
             <img src="${villager.image_uri}" class="villager-avatar"/>
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
     searchBar.addEventListener("keyup", (e) => {
         const cards = document.getElementsByClassName("card")
         const input = document.getElementById(e.target.value)
-        if (input.toLowerCase()) {
+        if (input) {
             for (const card of cards) {
                 card.style.display = "none"
             }
@@ -156,10 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
             for (const card of cards) {
                 card.style.display = "block"
             }
-
         }
-
-        
     })
 
     fetchVillagers();
