@@ -1,12 +1,9 @@
-const villagerUrl = "http://acnhapi.com/v1a/villagers/"
+const villagerUrl = "https://acnhapi.com/v1a/villagers/"
 const villagerCollection = document.getElementById("villager-container")
 
 document.addEventListener("DOMContentLoaded", () => {
-
     fetchVillagers();
     buildSearchBar();
-    
-    
 })
 
 // Part 1 - Fetch villagers from API
@@ -29,16 +26,16 @@ function renderVillager(villager) {
 
     buildBtn(villager, villagerCard)
     createDetails(villager, villagerCard)
-    buildCurrentBtn (villager, villagerCard)
+    buildCurrentBtn(villager, villagerCard)
 }
 
-function buildBtn (villager, villagerCard) {
+function buildBtn(villager, villagerCard) {
     const btn = document.createElement("button")
-        btn.id = `btn${villager.id}`
-        btn.className = "button"
-        btn.innerHTML = "About Me!"
-        villagerCard.append(btn)
-    
+    btn.id = `btn${villager.id}`
+    btn.className = "button"
+    btn.innerHTML = "About Me!"
+    villagerCard.append(btn)
+
     // Event 1 - Click on villagers to show their info
     btn.addEventListener("click", (e) => {
         const villagerId = e.target.id.substring(3)
@@ -66,13 +63,13 @@ function createDetails(villager, villagerCard) {
     villagerCard.append(detailsDiv)
 }
 
-function buildCurrentBtn (villager, villagerCard) {
+function buildCurrentBtn(villager, villagerCard) {
     const currentBtn = document.createElement("button")
     currentBtn.className = "current-button"
     currentBtn.innerHTML = "Add to Current"
     villagerCard.append(currentBtn)
 
-    // Event 3 - Add villagers to a current list when their card is clicked
+    // Event 2 - Add villagers to a current list when their card is clicked
     currentBtn.addEventListener("click", (e) => {
         if (currentBtn.style.display === "none") {
             currentBtn.style.display = "block"
@@ -159,7 +156,7 @@ function removeVillager(removeBtn) {
     removeBtn.parentNode.innerHTML = ""
 }
 
-// Event 2 - Create a search for villager
+// Event 3 - Create a search for villager
 function buildSearchBar() {
     const searchBar = document.getElementById("villager-name")
     searchBar.addEventListener("keyup", (e) => {
