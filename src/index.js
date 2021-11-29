@@ -169,7 +169,7 @@ function buildSearchBar() {
             input.style.display = "flex"
         } else {
             for (const card of cards) {
-                card.style.display = "block"
+                card.style.display = "flex"
             }
         }
     })
