@@ -166,7 +166,7 @@ function buildSearchBar() {
             for (const card of cards) {
                 card.style.display = "none"
             }
-            input.style.display = "block"
+            input.style.display = "flex"
         } else {
             for (const card of cards) {
                 card.style.display = "block"
