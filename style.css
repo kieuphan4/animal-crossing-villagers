@@ -128,4 +128,16 @@ form input#villager-name {
 
 }
 
+footer {
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    background-color: #66bb6a;
+    color: white;
+}
+
+a.footer {
+    color: #1b5e20;
+}
+
 
