@@ -2,9 +2,9 @@
 ![Image](https://user-images.githubusercontent.com/87745350/143979970-0dcba3eb-fccb-4b6b-82ae-92518d67d60e.png)
 A website designed with [ACHN API](http://acnhapi.com/) for Animal Crossing players to learn more about their villagers and to keep track of who comes and goes on their island!
 
-Feel free to visit the website here: ![Link](https://kieuphan4.github.io/animal-crossing-villagers/)
+Feel free to visit the website here: <https://kieuphan4.github.io/animal-crossing-villagers/>
 
-You could watch how to navigate through the website here: 
+You could watch how to navigate through the website here: <https://www.youtube.com/watch?v=SdNNlSlFwXs>
 
 ## Features
 ![Image](https://user-images.githubusercontent.com/87745350/143981500-c61b7167-f471-4aeb-ab23-95ef77efb419.gif)
