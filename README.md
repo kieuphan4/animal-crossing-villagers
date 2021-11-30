@@ -1,4 +1,5 @@
 # Animal Crossing Villagers
+[Image](https://user-images.githubusercontent.com/87745350/143979970-0dcba3eb-fccb-4b6b-82ae-92518d67d60e.png)
 
 ## Overview
 A website designed with [ACHN API](http://acnhapi.com/) for Animal Crossing players to learn more about their villagers and to keep track of who comes and goes on their island!
@@ -8,7 +9,6 @@ Feel free to visit the website here:
 You could watch how to navigate through the website here: 
 
 ## Features
----
 - Display individual character cards where players can click on the "About Me!" button to obtain information about different villagers
 - Search for a specific villager
     - The search bar is not case sensitive
@@ -20,9 +20,8 @@ You could watch how to navigate through the website here:
     - Players can add new villagers to their island after one has been release
 
 ## Resources
----
 - Created in Visual Studio Code
-- [ACHN API](http://acnhapi.com/) allowed to display villager details along with their images/icons
+- [ACHN API](http://acnhapi.com/) was utilized to display villager details along with their images/icons
 - The CDN from [Materialize CSS](https://materializecss.com/getting-started.html) was used to format the website layout
 - Minified [jQuery](https://code.jquery.com/) CDN was used for [Materialize CSS](https://materializecss.com/getting-started.html) to function
 
