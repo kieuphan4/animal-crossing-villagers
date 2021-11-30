@@ -8,14 +8,13 @@ You could watch how to navigate through the website here: <https://www.youtube.c
 
 ## Features
 ![Image](https://user-images.githubusercontent.com/87745350/143981500-c61b7167-f471-4aeb-ab23-95ef77efb419.gif)
-- Display individual character cards where players can click on the "About Me!" button to obtain information about different villagers
+- Display individual character cards for players to obtain information about different villagers
 - Search for a specific villager
     - The search bar is not case sensitive
 - Current Villagers List
     - Add villagers that are currently on the player's island
         - Only 10 villagers are allowed on an island in Animal Crossing, so the player can only add up to 10 villagers to the list
-    - Release villagers from the island
-        - Sometimes villagers request to leave the island to pursue their passion or go on an adventure. The player can let them go by clicking on the "Release" button
+    - Release villagers from the island when they request to leave to pursue their passion or go on an adventure
     - Players can add new villagers to their island after one has been release
 
 ## Resources
