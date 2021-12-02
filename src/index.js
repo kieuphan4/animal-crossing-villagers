@@ -77,7 +77,6 @@ function buildCurrentBtn(villager, villagerCard) {
             currentBtn.style.display = "none"
         }
         addToCurrent(villager)
-        e.target.style.background = "#66bb6a"
     })
 }
 
