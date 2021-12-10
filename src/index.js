@@ -81,74 +81,25 @@ function buildCurrentBtn(villager, villagerCard) {
 }
 
 // Part 3 - Create current villager list
-function addToCurrent(villagers) {
+function addToCurrent(villager) {
+    const currentList = document.getElementById("current-list")
+    const currentDiv = document.createElement("div")
+
     const villagerIcon = document.createElement("img")
     villagerIcon.className = "img-icon"
-    villagerIcon.src = villagers.icon_uri
+    villagerIcon.src = villager.icon_uri
+    currentDiv.append(villagerIcon)
 
     // Part 4 - Remove villagers from list
     const removeBtn = document.createElement("button")
     removeBtn.className = "remove-button"
     removeBtn.addEventListener("click", (e) => {
-        removeVillager(e.target)
+    removeVillager(e.target)
     })
     removeBtn.innerText = "Release"
-
-    const v1 = document.getElementById("villager1")
-    const v2 = document.getElementById("villager2")
-    const v3 = document.getElementById("villager3")
-    const v4 = document.getElementById("villager4")
-    const v5 = document.getElementById("villager5")
-    const v6 = document.getElementById("villager6")
-    const v7 = document.getElementById("villager7")
-    const v8 = document.getElementById("villager8")
-    const v9 = document.getElementById("villager9")
-    const v10 = document.getElementById("villager10")
-
-    switch ("") {
-        case v1.innerHTML:
-            v1.append(villagerIcon)
-            v1.append(removeBtn)
-            break
-        case v2.innerHTML:
-            v2.append(villagerIcon)
-            v2.append(removeBtn)
-            break
-        case v3.innerHTML:
-            v3.append(villagerIcon)
-            v3.append(removeBtn)
-            break
-        case v4.innerHTML:
-            v4.append(villagerIcon)
-            v4.append(removeBtn)
-            break
-        case v5.innerHTML:
-            v5.append(villagerIcon)
-            v5.append(removeBtn)
-            break
-        case v6.innerHTML:
-            v6.append(villagerIcon)
-            v6.append(removeBtn)
-            break
-        case v7.innerHTML:
-            v7.append(villagerIcon)
-            v7.append(removeBtn)
-            break
-        case v8.innerHTML:
-            v8.append(villagerIcon)
-            v8.append(removeBtn)
-            break
-        case v9.innerHTML:
-            v9.append(villagerIcon)
-            v9.append(removeBtn)
-            break
-        case v10.innerHTML:
-            v10.append(villagerIcon)
-            v10.append(removeBtn)
-            break
-        default:
-
-    }
+    currentDiv.append(removeBtn)
+    
+    currentList.append(currentDiv)
 }
 
 function removeVillager(removeBtn) {
